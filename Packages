@@ -7,7 +7,7 @@ Maintainer: Wes
 Author: Wes
 Section: Tweak
 Depends: ws.hbang.common
-Filename: debs/com.wrp1002.truedate_0.0.1-108+debug_iphoneos-arm.deb
+Filename: debs/com.wrp1002.truedate.deb
 Size: 7277120
 MD5sum: 66aaf0b3ed2decd1de184f35cd808534
 SHA1: 361c7604798984d8e87a428153cf3baa02cd995d
