@@ -1,47 +1,29 @@
 
 
-
-a {
-  color:#007aff;
-  text-decoration:none;
-  margin-left:0px;
-  display:block;
-  margin-bottom:2px;
-}
-
-.heading {
-  color:#6d6d72;
-  text-transform: uppercase;
-  padding-top: 15px;
-  padding-bottom: 0px;
-}
-
 html {
   background:#efeff4
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
-  margin-top: 60px;
-  margin-bottom: 20px;
 }
 
+a {
+  color:#007aff;
+  text-decoration:none;
+  margin-left:0px;
+  display:block;
+}
 
 ul {
-  margin:5px 0 15px;
-  padding:5px;
-  list-style:none;
-  background:#fff;
-  display:block;
-  border-top:solid #c8c7cc;
-  border-bottom:solid #c8c7cc; 
-  border-width:thin;
-}
-
-@media (min-width:708px) {
-ul:after,ul:before {
-  display:none
-}
+  margin:0px 0 15px;
+  padding:       5px;
+  list-style:    none;
+  background:  #fff;
+  display:       block;
+  border-top:    solid #c8c7cc;
+  border-bottom: solid #c8c7cc; 
+  border-width:  thin;
 }
 
 ul li {
@@ -50,6 +32,18 @@ ul li {
   padding:10px;
 }
 
+
+
+.heading {
+  color:#6d6d72;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 0px;
+}
+
+.footer {
+  text-align: center;
+}
 
 .scroll_view {
   overflow-x: scroll;
