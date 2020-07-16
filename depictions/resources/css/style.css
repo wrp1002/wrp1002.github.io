@@ -19,25 +19,31 @@ html .depiction {
 }
 
 body {
-  font-family: Arial,Calibri,Candara,Segoe,Segoe UI,Optima,sans-serif; 
-  margin:80px 0 35px
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-@media (min-width:708px) {
-#content {
-  width:708px;
-  margin:0 auto;
-  padding-left:5px;
-  
+@media only screen and (max-width: 600px) {
+  .body {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .scroll_view {
+      width: calc(100vw - 60px);
+  }
 }
+@media only screen and (min-width: 601px) {
+  .body {
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .scroll_view {
+      width: calc(500px - 40px);
+  }
 }
 
-@media (min-width:964px) {
-#content {
-  width:964px;
-  padding-left:5px;
-}
-}
 
 p[class="footer"] {
   margin:15px;
