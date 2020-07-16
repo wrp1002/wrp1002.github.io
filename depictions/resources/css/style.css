@@ -1,11 +1,12 @@
 
 
 html {
-  background:#efeff4
+  background:#efeff4;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+  margin: 0px;
 }
 
 a {
