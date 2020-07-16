@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-  <title></title>
-  <base target="_top">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="../resources/css/style.css">
-  </head>
-<body class="depiction">
-  <header>
-    <h1>TrueDate</h1>
-  </header>
-  <main id="content" role="main">
-  <div align="center">
-    <ul>
-      <li class="de">
-	   <versiontext>Supported Firmwares: iOS 11-12.1.2</versiontext><br/><br/>
-		TrueDate stops the date on your phone from changing until a specific time. Useful for people who stay up late
-		<br />
-      </li>
-    </ul>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<base target="_top">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="../resources/css/style.css">
 
-    <ul>
-      <li>
-        <a href="changelog.html" role="button">Changelog</a>
-      </li>
-    </ul>
+		<script type="text/javascript">
+			if (navigator.userAgent.search(/Cydia/) != -1) {
+				document.querySelector("body > header:nth-child(1)").style.visibility = "hidden";
+				document.querySelector("body").style.margin = "20px 0 35px";
+			}
+		</script>
+	</head>
 
-    <ul>
-		<li>
-			<a href="http://github.com/wrp1002/truedate" target="_blank" role="button">Github</a>
-		</li>
-	</ul>
-    <center><p class="footer">wrp1002 - Tweaks</p></center>
-  </main>
- <script type="text/javascript">
-if (navigator.userAgent.search(/Cydia/) != -1) {
-	document.querySelector("body > header:nth-child(1)").style.visibility = "hidden";
-	document.querySelector("body").style.margin = "20px 0 35px";
-}
-</script>
-</div>
-</body>
+	<body class="depiction">
+		<header>
+			<h1>TrueDate</h1>
+		</header>
+
+		<main id="content" role="main">
+			<div align="center">
+				<ul>
+					<li class="de">
+						<versiontext>Built for iOS 13 but probably works for others</versiontext><br/><br/>
+						TrueDate stops the date on your phone from changing until a specific time. Useful for people who stay up late
+						<br />
+					</li>
+				</ul>
+
+				<ul>
+					<li>
+						<a href="changelog.html" role="button">Changelog</a>
+					</li>
+				</ul>
+
+				<ul>
+					<li>
+						<a href="http://github.com/wrp1002/truedate" target="_blank" role="button">Github</a>
+					</li>
+				</ul>
+
+				<center><p class="footer">wrp1002 - Tweaks</p></center>
+
+			</div>
+		</main>
+	</body>
 </html>
