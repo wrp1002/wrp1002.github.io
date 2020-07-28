@@ -58,6 +58,18 @@ li img {
 	border: none;
 	padding: 15px 32px;
 	margin-bottom:15px;
+	box-shadow: 0 5px 0 darkblue;
+	position: relative;
+	text-decoration: none;
+}
+
+.repoButton:hover {
+	background-color: #06aedc;
+}
+
+.repoButton:active {
+	box-shadow: none;
+	top: 5px;
 }
 
 .heading {
@@ -99,12 +111,6 @@ li img {
   position: relative;
   display: inline-block flex;
 }
-
-
-
-
-
-
 
 
 
