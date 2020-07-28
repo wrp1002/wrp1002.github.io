@@ -63,11 +63,11 @@ li img {
 	text-decoration: none;
 }
 
-.repoButton:hover, repoButton.hover {
+.repoButton:hover, .repoButton.active {
 	background-color: #06aedc;
 }
 
-.repoButton:active, repoButton.active {
+.repoButton:active, .repoButton.active {
 	box-shadow: none;
 	top: 5px;
 }
