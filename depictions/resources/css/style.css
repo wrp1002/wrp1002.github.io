@@ -13,10 +13,10 @@ body {
     .body {
         margin-left: 20px;
         margin-right: 20px;
-        text-align: center;
+        width: 90%;
     }
     .scroll_view {
-        width: calc(90vw);
+        width: calc(100vw - 60px);
     }
 }
 @media only screen and (min-width: 601px) {
