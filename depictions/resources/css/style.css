@@ -118,6 +118,10 @@ li img {
 	text-align: center;
 }
 
+.scroll_view_container {
+    text-align: center;
+}
+
 .scroll_view {
     overflow-x: scroll;
     overflow-y: hidden;
