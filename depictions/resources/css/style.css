@@ -15,6 +15,22 @@ body {
   }
 }
 
+@media (min-width:708px) {
+#content {
+  width:708px;
+  margin:0 auto;
+  padding-left:5px;
+  
+}
+}
+
+@media (min-width:964px) {
+#content {
+  width:964px;
+  padding-left:5px;
+}
+}
+
 .site {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
   margin: 0px;
