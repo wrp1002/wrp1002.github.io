@@ -124,10 +124,25 @@ li img {
   overflow-x: hidden;
 }
 
-.container {
-	width: 100%;
-	overflow-x: auto;
-	white-space: nowrap;
+.screenshot-viewer a {
+	display: block;
+	width: auto;
+	height: 275px
+}
+
+.screenshot-viewer img {
+	height: 100%;
+	width: auto;
+	border-radius: 5px;
+	overflow: hidden;
+	display: inline-block
+}
+
+.screenshot-viewer {
+	overflow-y: hidden;
+	display: block;
+	margin: 0;
+	padding: 0
 }
 
 .scroll_view {
