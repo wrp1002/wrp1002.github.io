@@ -124,6 +124,12 @@ li img {
   overflow-x: hidden;
 }
 
+.container {
+	width: 100%;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
 .scroll_view {
   overflow-x: scroll;
   overflow-y: hidden;
