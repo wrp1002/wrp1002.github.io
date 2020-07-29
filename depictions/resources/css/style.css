@@ -9,26 +9,24 @@ body {
   margin: 0px;
 }
 
-@media (min-width:320px) and (max-width:768px) {
-  body {
-    overflow-x:hidden !important;
-  }
+@media only screen and (max-width: 600px) {
+    .body {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .scroll_view {
+        width: calc(100vw - 60px);
+    }
 }
-
-@media (min-width:708px) {
-#content {
-  width:708px;
-  margin:0 auto;
-  padding-left:5px;
-  
-}
-}
-
-@media (min-width:964px) {
-#content {
-  width:964px;
-  padding-left:5px;
-}
+@media only screen and (min-width: 601px) {
+    .body {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .scroll_view {
+        width: calc(500px - 40px);
+    }
 }
 
 .site {
@@ -120,29 +118,47 @@ li img {
 	text-align: center;
 }
 
-.scrollViewContainer {
-  overflow-x: hidden;
+.scroll_view {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 10px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
 }
 
-.scroll_view {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  margin: 10px;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+.scroll_view > .card {
+    background-color: #ccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    height: 125px;
+    width: 275px;
+    position: relative;
+    display: inline-block;
 }
 
 .scroll_view > .img_card {
-  background-color: #ccc;
-  width: 250px;
-  height: auto;
-  margin: 5px;
-  border-radius: 10px;
-  font-weight: bold;
-  position: relative;
-  display: inline-block flex;
+    background-color: #ccc;
+    width: 250px;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
 }
 
+.card > p {
+    color: white;
+    bottom: 15px;
+    left: 15px;
+    font-size: 25px;
+    position: absolute;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
 
 
 
