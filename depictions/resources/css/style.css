@@ -9,6 +9,13 @@ body {
   margin: 0px;
 }
 
+.site {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+  margin: 0px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 a {
   color:#007aff;
   text-decoration:none;
