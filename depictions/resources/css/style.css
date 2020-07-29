@@ -9,12 +9,17 @@ body {
   margin: 0px;
 }
 
+@media (min-width:320px) and (max-width:768px) {
+  body {
+    overflow-x:hidden !important;
+  }
+}
+
 .site {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
   margin: 0px;
   overflow-x: hidden;
   width: 100%;
-  background-color: blue;
 }
 
 a {
