@@ -1,0 +1,13 @@
+if [ $# != 1 ]; then
+	echo Error: Must supply file name!
+fi
+
+if [ $# == 1 ]; then
+	fullFile=$1
+	fileName="${fullFile%%.*}"
+	extension="${fullFile#*.}"
+
+	convert $fullFile -resize 87x87 "${PWD}/icon@3x.${extension}"
+	convert $fullFile -resize 58x58 "${PWD}/icon@2x.${extension}"
+	convert $fullFile -resize 29x29 "${PWD}/icon.${extension}"
+fi

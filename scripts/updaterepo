@@ -1,0 +1,86 @@
+
+#!/bin/sh
+
+cd ~/Documents/repo/
+
+packages=$(find ../projects/ -maxdepth 2 -name "packages" -type d)
+projectFolders=$(find ../projects/ -maxdepth 1 -mindepth 1 -type d -name "*")
+
+echo "Clearing debs folder..."
+rm ./debs/*
+
+echo
+echo ===========================================================================
+echo
+
+echo "Clearing package folders..."
+for p in $packages; do
+	echo clearing $p
+	rm $p/*
+done
+
+echo
+echo ===========================================================================
+echo
+
+for p in $projectFolders; do
+	echo "making package" $p
+	make package -C $p
+	echo
+done
+
+echo
+echo ===========================================================================
+echo
+
+for p in $packages; do
+	echo copying deb from $p
+	cp $p/* ./debs
+done
+
+echo
+echo ===========================================================================
+echo
+ 
+echo Updating packages file...
+echo
+
+rm Packages.bz2
+{ for fn in debs/*; do
+  name=$(ar p "$fn" control.tar.gz | tar xzO ./control | sed '/Name/!d' | sed 's/Name: //')
+  ar p "$fn" control.tar.gz | tar xzO ./control
+  echo Filename: "$fn"
+  echo Size: $(stat -c%s "$fn")
+  echo MD5sum: $(md5sum "$fn" | cut -d" " -f1)
+  echo SHA1: $(sha1sum "$fn" | cut -d" " -f1)
+  echo SHA256: $(sha256sum "$fn" | cut -d" " -f1)
+  echo Depiction: https://wrp1002.github.io/depictions/"$name"/index.html
+  echo Icon: https://wrp1002.github.io/depictions/"$name"/icon.png
+  echo
+done } | tee Packages
+bzip2 -f Packages
+
+echo
+echo ===========================================================================
+echo
+
+echo Updating repo webpage index...
+echo
+python3 ./scripts/updateIndex.py
+
+echo
+echo ===========================================================================
+echo
+
+printf "Push to git? (y/n) "
+read input
+
+if [ $input == 'y' ]; then
+	printf "Commit message: "
+	read msg
+
+	git add .
+	git commit -m "$msg"
+	git push
+fi
+

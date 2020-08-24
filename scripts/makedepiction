@@ -1,0 +1,90 @@
+#!/usr/bin/python3
+
+import os
+
+template = """<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>TITLE</title>
+
+		<base target="_top">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="../resources/css/style.css">
+	</head>
+
+	<body>
+		<main role="main">
+			<div class="site">
+				<div class="heading">Compatibility</div>
+				<ul>
+					<li>
+						COMPATIBILITY
+					</li>
+				</ul>
+
+				<div class="heading">Description</div>
+				<ul>
+					<li>
+						DESCRIPTION
+					</li>
+				</ul>
+
+				<div class="heading">screenshots</div>
+				<div class="scroll_view"><img class="img_card" src="screenshot1.gif"></div>
+				
+				<div class="heading">changelog</div>
+				<ul>
+					<li>
+						<b>1.0.0</b><br>
+						- Initial Release
+					</li>
+				</ul>
+				
+
+				<ul style="text-align: center;">
+					<li>
+						<a href="http://github.com/wrp1002/GITHUBPAGE" target="_blank" role="button">Source Code</a>
+					</li>
+				</ul>
+
+			</div>
+		</main>
+	</body>
+</html>"""
+
+
+def GetInput(prompt, defaultValue, acceptableInputs = []):
+	response = str(input(prompt + " [" + (str(defaultValue) if str(defaultValue) else "Enter to skip") + "]: "))
+
+	if acceptableInputs and response and response not in acceptableInputs:
+		print("Invalid input")
+		response = GetInput(prompt, defaultValue, acceptableInputs)
+
+	return response if response else defaultValue
+
+
+
+
+
+tweakName = "Tweak"
+compatibility = "iOS 13"
+description = "An awesome tweak!"
+githubPage = tweakName
+
+outputFile = os.path.join(os.getcwd(), "index.html")
+
+if __name__ == "__main__":
+	tweakName = GetInput("Tweak Name", "Tweak")
+	compatibility = GetInput("Compatibility", compatibility)
+	description = GetInput("Description", description) + "<br><br><b>This tweak has not been officially released yet. Install at your own risk.</b>"
+	githubPage = GetInput("GithHub Project Name", tweakName)
+
+	output = template.replace("TITLE", tweakName).replace("COMPATIBILITY", compatibility).replace("DESCRIPTION", description).replace("GITHUBPAGE", githubPage)
+
+	with open(outputFile, 'w+') as file:
+		file.write(output)
+
+	print()
+	print("Wrote to", outputFile)

@@ -1,0 +1,63 @@
+#!/usr/bin/python3
+
+import os
+
+functionContent = ' {\n\t\t%orig;\n\t\tLog(@"FUNCTION");\n\t}'
+print(os.getcwd())
+outputFile = os.path.join(os.getcwd(), "output.x")
+
+
+def GetClasses(f):
+    classes = []
+
+    with open(f.strip()) as file:
+            fileLines = file.readlines()
+            currentClass = []
+
+            for line in fileLines:
+                if "@interface" in line:
+                    parts = line.split()
+                    name = parts[1]
+                    if search in name:
+                        hook = "%hook " + name
+                        print(hook)
+                        currentClass.append(hook + "\n")
+
+                elif len(currentClass) > 0 and "(void)" in line and line[0:2] != "//" and "nullable" not in line and "oneway" not in line and "inout" not in line:
+                    function = "\t" + line[0:-2] + functionContent.replace("FUNCTION", line.strip())
+                    function = function.replace("__API_UNAVAILABLE(tvos)", "")
+                    #print(function)
+                    currentClass.append(function + "\n")
+
+                elif "@end" in line:
+                    if len(currentClass) > 1:
+                        currentClass.append("%end" + "\n\n")
+                        classes.append(currentClass)
+                    currentClass = []
+
+        
+    return classes
+
+
+
+
+if __name__ == "__main__":
+    search = input("Search for: ")
+    
+    os.system('find ~/theos/sdks/iPhoneOS13.3.sdk/System/Library/ -type f -name "*' + search + '*.h" > /tmp/files.txt')
+
+    with open("/tmp/files.txt") as file:
+        files = file.readlines()
+
+    os.remove("/tmp/files.txt")
+
+    with open(outputFile, 'w+') as output:
+        for f in files:
+            classes = GetClasses(f)
+            
+            for c in classes:
+                output.writelines(c)
+
+    print()
+    print("Wrote output to", outputFile)
+
