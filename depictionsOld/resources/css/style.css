@@ -1,0 +1,143 @@
+
+
+html {
+  background:#efeff4;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+  margin: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .body {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .scroll_view {
+        width: calc(100vw - 20px);
+    }
+}
+@media only screen and (min-width: 601px) {
+    .body {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .scroll_view {
+        width: calc(500px - 40px);
+    }
+}
+
+.site {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
+  margin: 0px;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  color:#007aff;
+  text-decoration:none;
+  margin-left:0px;
+  display:block;
+}
+
+ul {
+  margin:		 0px 0 15px;
+  padding:       5px;
+  list-style:    none;
+  background:  	 #fff;
+  display:       block;
+  border-top:    solid #c8c7cc;
+  border-bottom: solid #c8c7cc; 
+  border-width:  thin;
+}
+
+ul li {
+  display:block;
+  height:100%;
+  padding:10px;
+}
+
+li img {
+  margin:-7px 6px -9px -10px;
+  float:left;
+  display:block;
+}
+
+
+.title {
+	color:#6d6d72;	
+	text-align:center;
+	font-size:24px;	
+	padding-bottom: 20px;
+	font-weight: bold;
+}
+
+.repoButton {
+	background-color: #069ADC;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	border: none;
+	padding: 15px 32px;
+	margin-bottom:15px;
+	box-shadow: 0 5px 0 darkblue;
+	position: relative;
+	text-decoration: none;
+}
+
+.repoButton:hover {
+	background-color: #06aedc;
+}
+
+.repoButton:active {
+	box-shadow: none;
+	top: 5px;
+}
+
+.heading {
+	color:#6d6d72;
+	text-transform: uppercase;
+	padding-top:    15px;
+	padding-bottom: 10px;
+	padding-left:   5px;
+}
+
+.headingCenter {
+	color:#6d6d72;
+	padding-top:    15px;
+	padding-bottom: 10px;
+	padding-left:   5px;
+	text-align: center;
+}
+
+.footer {
+	color:#6d6d72;
+	text-align: center;
+}
+
+.scroll_view_container {
+    text-align: center;
+}
+
+.scroll_view {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 10px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scroll_view > .img_card {
+    background-color: #ccc;
+    width: 250px;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+

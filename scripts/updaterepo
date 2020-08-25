@@ -72,6 +72,15 @@ echo
 echo ===========================================================================
 echo
 
+echo Updating depictions...
+echo
+python3 ./scripts/updateDepictions.py
+
+
+echo
+echo ===========================================================================
+echo
+
 printf "Push to git? (y/n) "
 read input
 
