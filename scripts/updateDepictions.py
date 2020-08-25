@@ -5,7 +5,7 @@ projectPath = os.path.join(os.path.expanduser("~"), "Documents/projects/")
 depictionPath = os.path.join(os.path.expanduser("~"), "Documents/repo/depictions")
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-blacklistedFiles = ["ideas"]
+blacklistedFiles = ["ideas", "explosiveicons"]
 
 #=========================================================================================
 
