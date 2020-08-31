@@ -5,7 +5,7 @@ projectPath = os.path.join(os.path.expanduser("~"), "Documents/projects/")
 depictionPath = os.path.join(os.path.expanduser("~"), "Documents/repo/depictions")
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-blacklistedFiles = ["ideas", "explosiveicons"]
+blacklistedFiles = ["ideas", "WIP"]
 
 #=========================================================================================
 
@@ -55,7 +55,7 @@ def MakeDepiction(f):
 
 		return template
 	except:
-		print("Warning:", f, "not found")
+		print("* Warning:", f, "not found")
 		return ""
 
 def GetTweakName(f):
@@ -77,7 +77,7 @@ def main():
 		if b in names:
 			names.remove(b)
 		else:
-			print("Warning: blacklisted item '" + b + "' not found")
+			print("* Warning: blacklisted item '" + b + "' not found")
 
 	print("Tweaks found:", names)
 

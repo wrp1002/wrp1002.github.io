@@ -24,6 +24,9 @@ echo ===========================================================================
 echo
 
 for p in $projectFolders; do
+	if [ ! -f $p/Makefile ]; then
+		continue
+	fi
 	echo "making package" $p
 	make package -C $p
 	echo
