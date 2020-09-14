@@ -2,7 +2,7 @@
 
 import os
 
-functionContent = ' {\n\t\t%orig;\n\t\tLog(@"FUNCTION");\n\t}'
+functionContent = ' {\n\t\t%orig;\n\t\t[Debug Log:@"FUNCTION"];\n\t}'
 print(os.getcwd())
 outputFile = os.path.join(os.getcwd(), "output.x")
 
@@ -23,7 +23,7 @@ def GetClasses(f):
                         print(hook)
                         currentClass.append(hook + "\n")
 
-                elif len(currentClass) > 0 and "(void)" in line and line[0:2] != "//" and "nullable" not in line and "oneway" not in line and "inout" not in line:
+                elif len(currentClass) > 0 and "(void)" in line and line[0:2] != "//" and "nullable" not in line and "oneway" not in line and "inout" not in line and "CDStruct" not in line:
                     function = "\t" + line[0:-2] + functionContent.replace("FUNCTION", line.strip())
                     function = function.replace("__API_UNAVAILABLE(tvos)", "")
                     #print(function)
