@@ -8,6 +8,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <script type='application/javascript' src='/fastclick.js'></script>
         
         <style>
            .mainContainer {
@@ -49,7 +51,7 @@
                 for (let i = 0; i < colors.length; i++) {
                     let newCrew = crew.cloneNode(true);
                     let image = newCrew.getElementsByTagName('img')[0];
-                    image.src = "Images/" + colors[i] + ".png";
+                    image.src = "images/" + colors[i] + ".png";
                     parent.appendChild(newCrew)
                 }
 
@@ -78,6 +80,10 @@
             function Reset() {
                 location.reload();
             }
+
+            $(function() {
+                FastClick.attach(document.body);
+            });
 
         </script>
     </head>
