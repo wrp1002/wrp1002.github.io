@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <style>
+           .mainContainer {
+               height: 100%;
+                background-color: #202020;
+                text-align: center;
+           }
+
+           .group {
+               background-color: #202020;
+                border: 2px solid #202020; /* Green border */
+                color: white; /* White text */
+                font-size: 70px;
+                width: 100%;
+                display:grid;
+                grid-template: 1fr 1fr;
+           }
+
+            .itemButton {
+                font-size: 100px;
+                filter:grayscale(100%);
+            }
+
+            .imageItem {
+                float:left;
+                height:165px;
+                width:180px;
+            }
+
+        </style>
+
+        <script>
+            let colors = ["red", "orange", "yellow", "lime", "green", "cyan", "blue", "purple", "pink", "white", "black", "brown"];
+
+            function SetupButtons() {
+                let crew = document.getElementById('crew');
+                let parent = crew.parentElement;
+
+                for (let i = 0; i < colors.length; i++) {
+                    let newCrew = crew.cloneNode(true);
+                    let image = newCrew.getElementsByTagName('img')[0];
+                    image.src = "images/" + colors[i] + ".png";
+                    parent.appendChild(newCrew)
+                }
+
+                crew.remove();
+
+                var buttons = parent.getElementsByTagName("label");
+                console.log(buttons);
+
+                for (i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener("click", function() {
+                        let children = this.parentElement.children;
+
+                        for (child of children) {
+                            if (child.tagName == "LABEL")
+                                child.style.filter='grayscale(100%)';
+                        }
+
+                        this.style.filter='grayscale(0%)';
+                    });
+                    if ($.trim(buttons[i].textContent) == "???") {
+                        buttons[i].click();
+                    }
+                }
+            }
+            
+            function Reset() {
+                location.reload();
+            }
+
+        </script>
+    </head>
+
+    <body onload="SetupButtons();">
+        <div class="mainContainer">
+            <div>
+                <div class="group" id="crew">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <img src="blue.png" class="imageItem">
+
+                        <label class="btn itemButton btn-danger active">
+                            <input type="radio" checked> sus
+                        </label>
+                        <label class="btn itemButton btn-primary">
+                            <input type="radio"> ???
+                        </label>
+                        <label class="btn itemButton btn-success">
+                            <input type="radio"> ok!
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group" id="crew">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn itemButton btn-danger active" style="filter:grayscale(0%)" onclick="Reset();">
+                        <input type="radio" checked> Reset
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
