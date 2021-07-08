@@ -2,9 +2,12 @@
 
 import os
 
+
 functionContent = ' {\n\t\t%orig;\n\t\t[Debug Log:@"FUNCTION"];\n\t}'
 print(os.getcwd())
 outputFile = os.path.join(os.getcwd(), "output.x")
+#sdkfiles = "~/theos/sdks/iPhoneOS13.6.sdk/System/Library/"
+sdkfiles = "~/theos/sdks/iPhoneOS14.0.sdk/"
 
 
 def GetClasses(f):
@@ -35,7 +38,6 @@ def GetClasses(f):
                         classes.append(currentClass)
                     currentClass = []
 
-        
     return classes
 
 
@@ -43,8 +45,11 @@ def GetClasses(f):
 
 if __name__ == "__main__":
     search = input("Search for: ")
-    
-    os.system('find ~/theos/sdks/iPhoneOS13.3.sdk/System/Library/ -type f -name "*' + search + '*.h" > /tmp/files.txt')
+
+    cmd = 'find {} -type f -name "*{}*.h" > /tmp/files.txt'.format(sdkfiles, search)
+    print(cmd)
+
+    os.system(cmd)
 
     with open("/tmp/files.txt") as file:
         files = file.readlines()
